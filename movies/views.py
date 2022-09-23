@@ -24,6 +24,8 @@ class AddReview(View):
         movie = Movie.objects.get(id=pk)
         if form.is_valid():
             form = form.save(commit=False)  # Вызывая сейв, коммит фолс - хотим приостановить хранение нашей формы и можем внести изменения
+            if request.POST.get('parent', None): # Если в пост запросе есть пэрент - имя поля
+                form.parent_id = int(request.POST.get('parent')) # Достаем значение ключа пэрент(оно строкове-оборачиваем в инт)
             form.movie = movie
             form.save()
         return redirect(movie.get_absolute_url())
