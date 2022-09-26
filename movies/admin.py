@@ -1,7 +1,18 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
+from django import forms
 from .models import *
+
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+
+class MovieAdminForm(forms.ModelForm):  # виджет для загрузки изображений CKEditor(отдельная установка в django pip)
+    description = forms.CharField(label="Описание", widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = Movie
+        fields = '__all__'
+
 
 
 @admin.register(Category)
@@ -37,6 +48,7 @@ class MovieAdmin(admin.ModelAdmin):
     save_on_top = True  # кнопки сохранения сверху
     save_as = True  # добавляется поле 'Сохранить как новый объект'
     list_editable = ('draft',)  # поле черновик сделали "галочкой" - редактируемым
+    form = MovieAdminForm  # поле для редактирования - CKEditor
     readonly_fields = ('get_image',)
     fieldsets = [    # поля в одну строку (кортеж в кортеже)
         (None, {
