@@ -45,6 +45,7 @@ class MovieAdmin(admin.ModelAdmin):
     list_filter = ('category', 'year',)
     search_fields = ('title', 'category__name',)  # чтобы искать по категории надо указать по какому полю категории будем искать
     inlines = [MovieShotsInLine, ReviewInLine]  # подключаем классы для отзывов и кадров внизу фильма
+    actions = ['unpublish', 'publish']
     save_on_top = True  # кнопки сохранения сверху
     save_as = True  # добавляется поле 'Сохранить как новый объект'
     list_editable = ('draft',)  # поле черновик сделали "галочкой" - редактируемым
@@ -74,6 +75,34 @@ class MovieAdmin(admin.ModelAdmin):
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.poster.url} width="100" height="110"')
+
+    def unpublish(self, request, queryset):  # экшен
+        """Снять с публикации"""
+        row_update = queryset.update(draft=True)
+        if row_update == 1:
+            message_bit = "1 запись была обновлена"
+        elif row_update == 2 or row_update == 3 or row_update == 4:
+            message_bit = f"{row_update} записи были обновлены"
+        else:
+            message_bit = f"{row_update} записей было обновлено"
+        self.message_user(request, f"{message_bit}")
+
+    def publish(self, request, queryset):
+        """Опубликовать"""
+        row_update = queryset.update(draft=False)
+        if row_update == 1:
+            message_bit = "1 запись была обновлена"
+        elif row_update == 2 or row_update == 3 or row_update == 4:
+            message_bit = f"{row_update} записи были обновлены"
+        else:
+            message_bit = f"{row_update} записей было обновлено"
+            self.message_user(request, f"{message_bit}")
+
+    unpublish.short_description = "Снять с публикации"
+    unpublish.allowed_permission = ('change',)  # права пользователя на изменения записи
+
+    publish.short_description = "Опубликовать"
+    publish.allowed_permission = ('change', )
 
     get_image.short_description = 'Постер'
 
