@@ -6,8 +6,6 @@
 {% endblock container %}
 {% block sidebar %}
         <div class="side-bar col-lg-4">
-            {% include 'include/sidebar.html' %}
-        </div>
 {% endblock sidebar %}
 
 {% block movie %}
@@ -103,8 +101,7 @@
                         </ul>
                     </div>
                     <div class="clearfix"></div>
-                </div>
-        </div>
+            </ul>>
     </div>
     <div class="row sub-para-w3layouts mt-5">
 
@@ -119,6 +116,7 @@
         <p class="editContent" style="outline: none; cursor: inherit;">
             {{ movie.description|safe }}
         </p>
+    </div>
         <!--<p class="mt-3 italic-blue editContent"
            style="outline: none; cursor: inherit;">
             <iframe width="560" height="315"
@@ -172,6 +170,7 @@
             </div>
             <!--  //contact form grid ends here -->
         </div>
+    </div>
         {% for review in movie.get_review %}
             <div class="media py-5">
                 <img src="{% static 'images/te2.jpg' %}" class="mr-3 img-fluid" alt="image">
