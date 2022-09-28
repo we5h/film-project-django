@@ -41,7 +41,7 @@ class MovieShotsInLine(admin.TabularInline):  # появляются кадры 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     '''Фильмы'''
-    list_display = ('title', 'category', 'url', 'draft',)
+    list_display = ('title', 'category', 'url', 'draft', )
     list_filter = ('category', 'year',)
     search_fields = ('title', 'category__name',)  # чтобы искать по категории надо указать по какому полю категории будем искать
     inlines = [MovieShotsInLine, ReviewInLine]  # подключаем классы для отзывов и кадров внизу фильма
@@ -53,7 +53,7 @@ class MovieAdmin(admin.ModelAdmin):
     readonly_fields = ('get_image',)
     fieldsets = [    # поля в одну строку (кортеж в кортеже)
         (None, {
-            "fields": (('title', 'tagline'), )
+            "fields": (('title', 'tagline', ), )
         }),
         (None, {
             "fields": ('description', ('poster', 'get_image',),)

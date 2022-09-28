@@ -19,58 +19,65 @@
                 {{ movie.title }}
             </h3>
             <h5 class="editContent"></h5>
-            <ul>
-                <li style="list-style: none">
-                    <span><b>Год:</b> {{ movie.year }}</span></li>
-                <li style="list-style: none">
-                    <span><b>Страна:</b> {{ movie.country }}</span>
-                </li>
-                <li style="list-style: none">
-                    <span><b>Слоган:</b> {{ movie.tagline }}</span>
-                </li>
-                <li style="list-style: none">
-                    <span><b>Режиссер:</b>
+            <div>
+                <ul>
+                    <li style="list-style: none">
+                        <span><b>Год:</b> {{ movie.year }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Страна:</b> {{ movie.country }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Слоган:</b> {{ movie.tagline }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Режиссер:</b>
                         {% for director in movie.directors.all %}
-                            {{ director.name }}
+                            <a href="{{ director.get_absolute_url }}">
+                                {{ director.name }}
+                            </a>
+                        {% endfor %}
+                        </span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Актеры:</b>
+                        {% for actor in movie.actors.all %}
+                            <a href="{{ actor.get_absolute_url }}">
+                                {{ actor.name }}
+                            </a>
                         {% endfor %}
                     </span>
-                </li>
-                <li style="list-style: none"><span><b>Актеры:</b>
-                    {% for actor in movie.actors.all %}
-                        {{ actor.name }}
-                    {% endfor %}
-                </span>
-                </li>
-                <li style="list-style: none"><span><b>Жанр:</b>
-                    {% for genre in movie.genres.all %}
-                        {{ genre.name }}
-                    {% endfor %}
-                    </span>
-                </li>
-                <li style="list-style: none"><span><b>Премьера в мире:</b> {{ movie.world_premiere }}</span>
-                </li>
-                <li style="list-style: none">
-                    <span><b>Бюджет:</b> ${{ movie.budget }}</span></li>
-                <li style="list-style: none">
-                    <span><b>Сборы в США:</b> ${{ movie.fees_in_usa }}</span></li>
-                <li style="list-style: none"><span><b>Сборы в мире:</b> ${{ movie.fess_in_world }}</span>
-                </li>
-                <li style="list-style: none">
-                    <a href="#"><b>Рейтинг:</b>
-                        <span class="fa fa-star" aria-hidden="true"
-                              style="outline: none; cursor: inherit;"></span>
-                        <span class="fa fa-star" aria-hidden="true"
-                              style="outline: none; cursor: inherit;"></span>
-                        <span class="fa fa-star" aria-hidden="true"
-                              style="outline: none; cursor: inherit;"></span>
-                        <span class="fa fa-star" aria-hidden="true"
-                              style="outline: none; cursor: inherit;"></span>
-                        <span class="fa fa-star" aria-hidden="true"
-                              style="outline: none; cursor: inherit;"></span>
-                        <span class="editContent"
-                              style="outline: none; cursor: inherit;">5.0</span>
-                    </a>
-                </li>
+                    </li>
+                    <li style="list-style: none"><span><b>Жанр:</b>
+                        {% for genre in movie.genres.all %}
+                            {{ genre.name }}
+                        {% endfor %}
+                        </span>
+                    </li>
+                    <li style="list-style: none"><span><b>Премьера в мире:</b> {{ movie.world_premiere }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Бюджет:</b> ${{ movie.budget }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Сборы в США:</b> ${{ movie.fees_in_usa }}</span></li>
+                    <li style="list-style: none"><span><b>Сборы в мире:</b> ${{ movie.fess_in_world }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <a href="#"><b>Рейтинг:</b>
+                            <span class="fa fa-star" aria-hidden="true"
+                                  style="outline: none; cursor: inherit;"></span>
+                            <span class="fa fa-star" aria-hidden="true"
+                                  style="outline: none; cursor: inherit;"></span>
+                            <span class="fa fa-star" aria-hidden="true"
+                                  style="outline: none; cursor: inherit;"></span>
+                            <span class="fa fa-star" aria-hidden="true"
+                                  style="outline: none; cursor: inherit;"></span>
+                            <span class="fa fa-star" aria-hidden="true"
+                                  style="outline: none; cursor: inherit;"></span>
+                            <span class="editContent"
+                                  style="outline: none; cursor: inherit;">5.0</span>
+                        </a>
+                    </li>
+                </ul>
                 <div class="share-desc">
                     <div class="share">
                         <h4 class="editContent"
@@ -101,7 +108,8 @@
                         </ul>
                     </div>
                     <div class="clearfix"></div>
-            </ul>>
+                </div>
+            </div>
     </div>
     <div class="row sub-para-w3layouts mt-5">
 
