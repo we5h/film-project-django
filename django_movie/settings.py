@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.sites',
+    # 'django.contrib.flatpages',
     'movies.apps.MoviesConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'snowpenguin.django.recaptcha3',
 ]
 
 DISABLE_DARK_MODE = True
@@ -201,3 +204,9 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+
+RECAPTCHA_PUBLIC_KEY = "6LdhJE8iAAAAAJxIJkTsD8fI2rWpPQN-LYWKDgYQ"
+RECAPTCHA_PRIVATE_KEY = "6LdhJE8iAAAAANpC4pfrGHaDRZh8e_ucchg9tZnY"
+RECAPTCHA_DEFAULT_ACTION = "generic"
+RECAPTCHA_SCORE_THRESHOLD = 0.5
