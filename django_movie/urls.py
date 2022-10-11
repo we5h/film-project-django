@@ -19,10 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
+    path('contact/', include('contact.urls')),
     path('admin/', admin.site.urls),
     path("", include("movies.urls")),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('pages/', include('django.contrib.flatpages.urls'))
+    path('pages/', include('django.contrib.flatpages.urls')),
+
 ]
 
 if settings.DEBUG:
