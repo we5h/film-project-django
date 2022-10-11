@@ -9,7 +9,7 @@ class ContactForm(forms.ModelForm):
 
     class Meta:
         model = Contact
-        fields = ("email", "captcha")
+        fields = ["email", "captcha"]
         widgets = {
             "email": forms.TextInput(attrs={"class": "editContent", "placeholder": "Your Email..."})
         }
