@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-13 10:29+0300\n"
+"PO-Revision-Date: 2022-10-13 10:29+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+
+#: .\templates\base.html:35
+msgid "Домой"
+msgstr "Home"
+
+#: .\templates\base.html:37
+msgid "Первая страница"
+msgstr "First Page"
+
+#: .\templates\contact\tags\form.html:2
+msgid "Новостная рассылка"
+msgstr "Newslatter"
+
+#: .\templates\contact\tags\form.html:3
+msgid ""
+"Подписавшись на нашу рассылку, вы всегда будете получать последние новости и "
+"обновления от нас."
+msgstr ""
+"By subscribing to our mailing list you will always get latest news and "
+"updates from us."
+
+#: .\templates\include\footer.html:15
+msgid ""
+"HBO ® и соответствующие знаки являются собственностью Home Box Office, Inc."
+msgstr ""
+"HBO ® and related service marks are the property of Home Box Office, Inc"
+
+#: .\templates\include\footer.html:17
+msgid "Мы в соц. сетях"
+msgstr "Social"
+
+#: .\templates\include\footer.html:47
+msgid "Разделы"
+msgstr "Sections"
+
+#: .\templates\include\footer.html:50 .\templates\include\header.html:13
+msgid "Главная"
+msgstr "Home"
+
+#: .\templates\include\footer.html:53 .\templates\include\header.html:16
+#: .\templates\include\header.html:17
+msgid "Категории"
+msgstr "Categories"
+
+#: .\templates\include\footer.html:56 .\templates\include\footer.html:86
+msgid "Контакты"
+msgstr "Contacts"
+
+#: .\templates\include\footer.html:63
+msgid "Страницы"
+msgstr "Pages"
+
+#: .\templates\include\footer.html:93
+msgid "Расположение"
+msgstr "Location"
+
+#: .\templates\include\footer.html:110
+msgid "Все права зарегистрированы | Дизайн :"
+msgstr "All rights reserved | Design by"
+
+#: .\templates\include\header.html:10
+msgid "Меню"
+msgstr "Menu"
+
+#: .\templates\include\header.html:26
+msgid "Вход"
+msgstr "Login"
+
+#: .\templates\include\header.html:52
+msgid "лучший сайт на django 3"
+msgstr "Best site based on Django 3"
+
+#: .\templates\include\header.html:53
+msgid "Все о кино"
+msgstr "All about movies"
+
+#: .\templates\include\sidebar.html:3
+msgid "Поиск фильма"
+msgstr "Film search"
+
+#: .\templates\include\sidebar.html:5
+msgid "Введите название..."
+msgstr "Enter title..."
+
+#: .\templates\include\sidebar.html:12
+msgid "Жанры"
+msgstr "Genres"
+
+#: .\templates\include\sidebar.html:25 .\templates\movies\movie_detail.html:25
+msgid "Год"
+msgstr "Year"
+
+#: .\templates\include\sidebar.html:35
+msgid "Найти"
+msgstr "Search"
+
+#: .\templates\include\sidebar.html:40 .\templates\movies\movie_detail.html:66
+msgid "Рейтинг"
+msgstr "Rating"
+
+#: .\templates\movies\actor.html:25
+msgid "Возраст"
+msgstr "Age"
+
+#: .\templates\movies\actor.html:25
+msgid "лет"
+msgstr "years"
+
+#: .\templates\movies\actor.html:27 .\templates\movies\movie_detail.html:33
+msgid "Режиссер"
+msgstr "Producer"
+
+#: .\templates\movies\actor.html:33
+msgid "Актер"
+msgstr "Actor"
+
+#: .\templates\movies\movie_detail.html:27
+msgid "Страна"
+msgstr "Country"
+
+#: .\templates\movies\movie_detail.html:30
+msgid "Слоган"
+msgstr "Slogan"
+
+#: .\templates\movies\movie_detail.html:42
+msgid "Актеры"
+msgstr "Actors"
+
+#: .\templates\movies\movie_detail.html:50
+msgid "Жанр"
+msgstr "Genres"
+
+#: .\templates\movies\movie_detail.html:56
+msgid "Премьера в мире"
+msgstr "Premier in world"
+
+#: .\templates\movies\movie_detail.html:59
+msgid "Бюджет"
+msgstr "Budget"
+
+#: .\templates\movies\movie_detail.html:61
+msgid "Сборы в США"
+msgstr "Fees in USA"
+
+#: .\templates\movies\movie_detail.html:62
+msgid "Сборы в мире"
+msgstr "Fees in world"
+
+#: .\templates\movies\movie_detail.html:114
+msgid "О фильме"
+msgstr "About"
+
+#: .\templates\movies\movie_detail.html:142
+msgid "Оставить отзыв"
+msgstr "Leave feedback"
+
+#: .\templates\movies\movie_detail.html:149
+msgid "Ваш комментарий *"
+msgstr "Your comment *"
+
+#: .\templates\movies\movie_detail.html:156
+msgid "Имя *"
+msgstr "Name *"
+
+#: .\templates\movies\movie_detail.html:170
+msgid "Отправить"
+msgstr "Send"
+
+#: .\templates\movies\movie_detail.html:187
+msgid "Ответить"
+msgstr "Reply"
+
+#: .\templates\movies\tags\last_movie.html:3
+msgid "Последние добавленные"
+msgstr "Last added"
+
+#~ msgid "Имя"
+#~ msgstr "Name"

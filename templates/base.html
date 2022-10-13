@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static recaptcha3 %}
+{% load static recaptcha3 i18n %}
 <html lang="ru">
 <head>
     <!-- //Meta tag Keywords -->
@@ -32,9 +32,9 @@
     </div>
     <ol class="breadcrumb editContent">
         <li class="breadcrumb-item">
-            <a href="index.html" class="editContent">Home</a>
+            <a href="/" class="editContent">{% trans 'Домой' %}</a>
         </li>
-        <li class="breadcrumb-item active editContent">Single Page</li>
+        <li class="breadcrumb-item active editContent">{% trans 'Первая страница' %}</li>
     </ol>
     {% block content %}
 
