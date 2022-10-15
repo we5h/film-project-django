@@ -4,6 +4,7 @@ from django.views.generic import CreateView
 
 from .forms import ContactForm
 from .models import Contact
+from .service import send
 
 
 class ContactView(CreateView):
@@ -11,3 +12,9 @@ class ContactView(CreateView):
     success_url = "/"
     fields = ['email',]
     template_name = 'contact/tags/form.html'
+
+    def form_valid(self, form):
+        form.save()
+        send(form.instance.email)
+        # send_spam_email.delay(form.instance.email)
+        return super().form_valid(form)

@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'snowpenguin.django.recaptcha3',
     'contact.apps.ContactConfig',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 DISABLE_DARK_MODE = True
@@ -93,6 +96,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -144,6 +151,8 @@ STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -225,3 +234,21 @@ RECAPTCHA_DEFAULT_ACTION = "generic"
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 
 SITE_ID = 1
+
+# smtp
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'the_bat_2015@mail.ru'
+EMAIL_HOST_PASSWORD = 'DCjRRz3R741wj0V9RtjK'
+EMAIL_PORT = 465
+
+# REDIS related settings
+REDIS_HOST = '0.0.0.0'
+REDIS_PORT = '6379'
+CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
