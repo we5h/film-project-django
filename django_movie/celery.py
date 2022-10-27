@@ -9,12 +9,10 @@ app.config_from_object('django.conf:settings', namespace='CELERY')  # перем
 app.autodiscover_tasks()  # автоматически подцеплять таски в приложениях
 
 
-
 # celery beat tasks
-
 app.conf.beat_schedule = {
-    'send-spam-every-5-minute': {
+    'send-spam-every-week': {
         'task': 'contact.tasks.send_beat_email',
-        'schedule': crontab(minute='*/5'),  # */5 каждые 5 мин
+        'schedule': crontab(0, 0, day_of_month='1,7,14,21,28'),  # каждую неделю
     }
 }
