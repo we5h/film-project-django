@@ -85,6 +85,14 @@ msgstr "Menu"
 msgid "Вход"
 msgstr "Login"
 
+#: .\templates\include\header.html:26
+msgid "Выйти"
+msgstr "Log out"
+
+#: .\templates\include\header.html:26
+msgid "Регистрация"
+msgstr "Sign Up"
+
 #: .\templates\include\header.html:52
 msgid "лучший сайт на django 3"
 msgstr "Best site based on Django 3"
