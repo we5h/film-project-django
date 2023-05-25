@@ -10,7 +10,7 @@ from .tasks import send_spam_email
 class ContactView(CreateView):
     model = Contact
     success_url = "/"
-    fields = ['email',]
+    fields = ['email', ]
     template_name = 'contact/tags/form.html'
 
     def form_valid(self, form):

@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from movies.models import Movie
 from .models import Contact
 
+
 def send(user_email):
     send_mail(
         'Вы подписались на рассылку',
@@ -11,6 +12,7 @@ def send(user_email):
         [user_email],
         fail_silently=False,
     )
+
 
 def send_news():
     movies = Movie.objects.order_by("-id")[:5]

@@ -23,6 +23,7 @@ class MoviesView(GenreYear, ListView):
     queryset = Movie.objects.filter(draft=False)
     paginate_by = 1
 
+
 class MovieDetailView(GenreYear, DetailView):
     """Полное описание фильма"""
     model = Movie
@@ -86,7 +87,6 @@ class FilterMoviesView(GenreYear, ListView):
 
     def get_queryset(self):
         if 'genre' in self.request.GET and 'year' in self.request.GET:
-            print('if genre and year')
             queryset = Movie.objects.filter(
             Q(year__in=self.request.GET.getlist("year")), Q(genres__in=self.request.GET.getlist("genre"))
             )
